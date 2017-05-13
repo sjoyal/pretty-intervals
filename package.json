@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "description": "generate an array of round intervals for a number range",
   "main": "index.js",
+  "babel": {
+     "presets": ["env"]
+  },
   "scripts": {
-    "test": "ava -v",
-    "watch:test": "ava -v -w"
+    "build": "babel src/index.js --out-file index.js",
+    "test": "npm run build && ava -v"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,8 @@
   },
   "homepage": "https://github.com/sjoyal/pretty-intervals#readme",
   "devDependencies": {
-    "ava": "^0.19.1"
+    "ava": "^0.19.1",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0"
   }
 }
