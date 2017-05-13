@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "generate an array of round intervals for a number range",
   "license": "MIT",
-  "repository": "https://github.com/sjoyal/pretty-intervals",
+  "repository": "sjoyal/pretty-intervals",
   "author": {
     "name": "Sean Joyal",
     "email": "sean.joyal@gmail.com"
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "build": "babel src/index.js --out-file index.js",
-    "test": "npm run build && ava -v"
+    "test": "npm run build && ava -v",
+    "prepublish": "npm run test"
   },
   "keywords": [
     "chart",
@@ -24,9 +25,9 @@
     "range"
   ],
   "bugs": {
-    "url": "https://github.com/sjoyal/pretty-intervals/issues"
+    "url": "sjoyal/pretty-intervals/issues"
   },
-  "homepage": "https://github.com/sjoyal/pretty-intervals#readme",
+  "homepage": "sjoyal/pretty-intervals#readme",
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
