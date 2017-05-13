@@ -1,0 +1,30 @@
+{
+  "name": "pretty-intervals",
+  "version": "0.0.0",
+  "description": "generate an array of round intervals for a number range",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava -v",
+    "watch:test": "ava -v -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjoyal/pretty-intervals.git"
+  },
+  "keywords": [
+    "chart",
+    "ticks",
+    "intervals",
+    "scale",
+    "range"
+  ],
+  "author": "Sean <sean.joyal@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjoyal/pretty-intervals/issues"
+  },
+  "homepage": "https://github.com/sjoyal/pretty-intervals#readme",
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
+}
