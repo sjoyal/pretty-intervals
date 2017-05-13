@@ -20,7 +20,7 @@ function findLowerBound(min, interval) {
     return interval * Math.floor(min / interval);
 }
 
-export default function calculateIntervals(max, min, opts = {}) {
+const calculateIntervals = (max, min, opts = {}) => {
     const { breaks = [1, 1.5, 2, 3, 5, 7.5, 10], includeBounds = false, numIntervals = 5 } = opts;
     const interval = findIntervalSize(max, min, breaks, numIntervals);
     const start = findLowerBound(min, interval);
@@ -44,3 +44,5 @@ export default function calculateIntervals(max, min, opts = {}) {
 
     return ticks;
 };
+
+module.exports = calculateIntervals;
