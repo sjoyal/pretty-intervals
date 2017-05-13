@@ -49,3 +49,7 @@ Type: `number`<br>
 Default: `5`<br>
 Minimum: `1`<br>
 A hint indicating the number of round intervals preferred. The presence of this optional parameter does **NOT** guarantee an explicit number of intervals returned.
+
+## License
+
+MIT
