@@ -2,7 +2,7 @@ import test from 'ava';
 import calculateIntervals from './index';
 
 test('Is a function', t => {
-    t.true(typeof calculateIntervals === 'function');
+    t.is(typeof calculateIntervals, 'function');
 });
 
 test('Third argument is optional', t => {
@@ -30,4 +30,12 @@ test('Appropriate intervals returned', t => {
     });
 
     t.pass();
+});
+
+test('Include upper and lower bounds', t => {
+    const testArr = [0, 20, 40, 60, 80, 100];
+    const intervals = calculateIntervals(100, 0, { includeBounds: true });
+    const isSame = testArr.length === intervals.length && intervals.every((interval, i) => interval === testArr[i]);
+
+    t.true(isSame, `Intervals returned: ${intervals}`);
 });
