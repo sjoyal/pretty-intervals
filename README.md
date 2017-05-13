@@ -44,10 +44,8 @@ Number representing the bottom of the range.
 
 Type: `Object`
 
-##### numIntervals
-
+* **numIntervals**<br>
 Type: `number`<br>
 Default: `5`<br>
-Minimum: `1`
-
-A hint indicating the number of round intervals preferred. The presence of this optional parameter does **not** guarantee an explicit number of intervals returned.
+Minimum: `1`<br>
+A hint indicating the number of round intervals preferred. The presence of this optional parameter does **NOT** guarantee an explicit number of intervals returned.
