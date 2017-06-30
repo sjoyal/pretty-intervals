@@ -48,11 +48,13 @@ Type: `Object`
 Type: `number`<br>
 Default: `5`<br>
 Minimum: `1`<br>
+
 A hint indicating the number of round intervals preferred. The presence of this optional parameter does **NOT** guarantee an explicit number of intervals returned.
 
 * **includeBounds**<br>
 Type: `boolean`<br>
-Default: 'false'<br>
+Default: `false`<br>
+
 By default, a call to **prettyIntervals(min, max)** will return intervals greater than min and less than max. If this optional parameter is set to `true`, a lower bound interval less than min and upper bound interval greater than max will be returned in the intervals array.
 
 ## License
