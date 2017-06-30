@@ -7,7 +7,7 @@ test('Is a function', t => {
 
 test('Third argument is optional', t => {
     try {
-        calculateIntervals(100, 0);
+        calculateIntervals(0, 100);
     } catch (e) {
         t.fail('Third argument is NOT optional');
     }
@@ -16,12 +16,12 @@ test('Third argument is optional', t => {
 });
 
 test('Output is an array', t => {
-    t.true(Array.isArray(calculateIntervals(100, 0)));
+    t.true(Array.isArray(calculateIntervals(0, 100)));
 });
 
 test('Appropriate intervals returned', t => {
     const testArr = [20, 40, 60, 80];
-    const intervals = calculateIntervals(100, 0);
+    const intervals = calculateIntervals(0, 100);
 
     intervals.forEach((interval, index) => {
         if (interval !== testArr[index]) {
@@ -40,9 +40,19 @@ test('Find range regardless of max, min argument order', t => {
     t.true(isSame, `Intervals returned: ${intervals}`);
 });
 
+test('Find range regardless of max, min magnitude', t => {
+    const intervals = calculateIntervals(.012, .021, { includeBounds: true });
+    t.true(Array.isArray(intervals) && intervals.length > 0, `Intervals returned: ${intervals}`);
+});
+
+test('Find range regarless of max, min sign', t => {
+    const intervals = calculateIntervals(-100, 100, { includeBounds: true });
+    t.true(Array.isArray(intervals) && intervals.length > 0, `Intervals returned: ${intervals}`);
+});
+
 test('Include upper and lower bounds', t => {
     const testArr = [0, 20, 40, 60, 80, 100];
-    const intervals = calculateIntervals(100, 0, { includeBounds: true });
+    const intervals = calculateIntervals(0, 100, { includeBounds: true });
     const isSame = testArr.length === intervals.length && intervals.every((interval, i) => interval === testArr[i]);
 
     t.true(isSame, `Intervals returned: ${intervals}`);
