@@ -41,17 +41,24 @@ const calculateIntervals = (min, max, opts = {}) => {
         throw new TypeError(`Expected ${numIntervals} to be a number greater than or equal to 1`);
     }
 
+    // there's no intervals between 2 equal values, return an empty array
+    if (min === max) {
+        return ticks;
+    }
+
     for (let i = 1; i <= numIntervals; i++) {
         const tick = start + interval * i;
 
-        if (tick < end) {
+        if (tick <= end) {
             ticks.push(tick);
         }
     }
 
     // add bounds if necessary, but conduct check to see if upper bound is already including in ticks array
-    if (includeBounds === true) {
+    if (includeBounds === true && !ticks.find(t => t === end)) {
         ticks = [start].concat(ticks.slice(0)).concat(end);
+    } else if (includeBounds === true) {
+        ticks.unshift(start);
     }
 
     return ticks;
