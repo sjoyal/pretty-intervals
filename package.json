@@ -1,6 +1,6 @@
 {
   "name": "pretty-intervals",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "generate an array of round intervals for a number range",
   "license": "MIT",
   "repository": "sjoyal/pretty-intervals",
