@@ -19,8 +19,13 @@ test('Output is an array', t => {
     t.true(Array.isArray(calculateIntervals(0, 100)));
 });
 
+test('Output is an empty array if min and max values are equal', t=> {
+    const intervals = calculateIntervals(100, 100);
+    t.true(Array.isArray(intervals) && intervals.length === 0, `Intervals returned: ${intervals}`);
+});
+
 test('Appropriate intervals returned', t => {
-    const testArr = [20, 40, 60, 80];
+    const testArr = [20, 40, 60, 80, 100];
     const intervals = calculateIntervals(0, 100);
 
     intervals.forEach((interval, index) => {
@@ -33,7 +38,7 @@ test('Appropriate intervals returned', t => {
 });
 
 test('Find range regardless of max, min argument order', t => {
-    const testArr = [20, 40, 60, 80];
+    const testArr = [20, 40, 60, 80, 100];
     const intervals = calculateIntervals(0, 100);
     const isSame = testArr.length === intervals.length && intervals.every((interval, i) => interval === testArr[i]);
 
